@@ -1,0 +1,24 @@
+:root {
+  --bloom-peach:    #F2A28A;
+  --bloom-lavender: #C9B8E8;
+  --bloom-blush:    #F7C5C0;
+  --bloom-cream:    #FAE8D4;
+  --bloom-lilac:    #DEC5EC;
+  --bloom-coral:    #E8745A;
+  --bloom-white:    #FDFAF8;
+  --bloom-purple:   #7B5EA7;
+  --bloom-ink:      #3D2E4E;
+  --glow-amber:     #FCEBD4;
+
+  --font-serif:  "Cormorant Garamond", Georgia, serif;
+  --font-script: "Dancing Script", cursive;
+  --font-sans:   "DM Sans", "Inter", system-ui, sans-serif;
+
+  --radius-sm:  0.5rem;
+  --radius-md:  1rem;
+  --radius-lg:  1.5rem;
+  --radius-xl:  2rem;
+
+  --shadow-bloom: 0 8px 32px rgba(201, 184, 232, 0.3);
+  --shadow-glow:  0 0 40px rgba(252, 235, 212, 0.6);
+}

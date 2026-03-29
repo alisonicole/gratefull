@@ -1,0 +1,37 @@
+@import "tailwindcss";
+@import "./styles/tokens.css";
+
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body, #root { height: 100%; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-sans);
+  color: var(--bloom-ink);
+  background-color: var(--bloom-cream);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom utility classes — Tailwind v4 uses @utility instead of @layer utilities */
+@utility font-serif  { font-family: var(--font-serif); }
+@utility font-script { font-family: var(--font-script); }
+
+@utility bg-dream {
+  background: linear-gradient(135deg, var(--bloom-cream) 0%, var(--bloom-blush) 40%, var(--bloom-lavender) 100%);
+  min-height: 100vh;
+}
+
+@utility card-glass {
+  background: rgba(253, 250, 248, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(201, 184, 232, 0.3);
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow-bloom);
+}
+
+@utility card-slip {
+  background: linear-gradient(160deg, var(--bloom-white) 0%, var(--bloom-blush) 100%);
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(201, 184, 232, 0.25);
+}

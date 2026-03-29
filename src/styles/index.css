@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./tokens.css";
+
+
+/* Base resets */
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  color: var(--bloom-ink);
+  background-color: var(--bloom-cream);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Utility layer extras */
+@layer utilities {
+  .font-serif   { font-family: var(--font-serif); }
+  .font-script  { font-family: var(--font-script); }
+
+  .text-bloom-ink      { color: var(--bloom-ink); }
+  .text-bloom-purple   { color: var(--bloom-purple); }
+  .text-bloom-coral    { color: var(--bloom-coral); }
+
+  .bg-bloom-cream      { background-color: var(--bloom-cream); }
+  .bg-bloom-lavender   { background-color: var(--bloom-lavender); }
+
+  /* Page-level gradient backgrounds */
+  .bg-dream {
+    background: linear-gradient(135deg,
+      var(--bloom-cream)    0%,
+      var(--bloom-blush)   40%,
+      var(--bloom-lavender) 100%);
+    min-height: 100vh;
+  }
+
+  /* Glassmorphism card */
+  .card-glass {
+    background: rgba(253, 250, 248, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(201, 184, 232, 0.3);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-bloom);
+  }
+
+  /* Slip paper feel */
+  .card-slip {
+    background: linear-gradient(160deg, var(--bloom-white) 0%, var(--bloom-blush) 100%);
+    border-radius: var(--radius-md);
+    box-shadow: 0 4px 16px rgba(201, 184, 232, 0.25);
+  }
+}
