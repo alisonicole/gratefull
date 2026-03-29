@@ -135,6 +135,7 @@ export default function Onboarding() {
               🫙
             </motion.div>
             <div className="flex flex-col gap-3">
+              <p className="font-script text-bloom-purple text-xl">Gratefull</p>
               <h1 className="font-serif text-display text-bloom-ink italic">
                 Hey, {user?.get("displayName") || "dreamer"} 🌸
               </h1>

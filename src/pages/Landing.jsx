@@ -88,9 +88,12 @@ export default function Landing() {
 
             <div className="flex flex-col gap-3">
               <h1 className="font-serif text-display text-bloom-ink italic leading-tight">
-                Gratitude Jar
+                Gratefull
               </h1>
-              <p className="font-sans text-bloom-ink/70 text-lg leading-relaxed">
+              <p className="font-script text-bloom-purple text-lg">
+                A Gratitude Jar Practice
+              </p>
+              <p className="font-sans text-bloom-ink/70 text-lg leading-relaxed mt-1">
                 Three things a day.<br />
                 A jar full of your dream life.
               </p>
