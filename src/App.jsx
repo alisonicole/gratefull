@@ -13,6 +13,7 @@ import Entry      from "@/pages/Entry";
 import SlipDetail from "@/pages/SlipDetail";
 import Reflect    from "@/pages/Reflect";
 import Feed       from "@/pages/Feed";
+import Science    from "@/pages/Science";
 import Profile     from "@/pages/Profile";
 import Reflections from "@/pages/Reflections";
 import Upgrade     from "@/pages/Upgrade";
@@ -51,6 +52,7 @@ const router = createBrowserRouter([
       { path: "/slip/:id",    element: <SlipDetail /> },
       { path: "/reflect/:id", element: <Reflect /> },
       { path: "/feed",        element: <Feed /> },
+      { path: "/science",     element: <Science /> },
       { path: "/profile",      element: <Profile /> },
       { path: "/reflections", element: <Reflections /> },
       { path: "/upgrade",     element: <Upgrade /> },
