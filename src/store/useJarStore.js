@@ -7,7 +7,7 @@ export const useJarStore = create((set) => ({
   setActiveJar: (jar) => set({ activeJar: jar }),
   incrementEntryCount: () => set((s) => {
     if (!s.activeJar) return {};
-    s.activeJar.set("entryCount", (s.activeJar.get("entryCount") || 0) + 1);
+    s.activeJar.set("entryCount", (s.activeJar.get("entryCount") || 0) + 3);
     return { activeJar: s.activeJar };
   }),
 }));

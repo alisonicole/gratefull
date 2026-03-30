@@ -177,6 +177,7 @@ export default function Home() {
           {entryCount === 0
             ? "Your jar is waiting for its first slip ✨"
             : `${entryCount} gratitude${entryCount === 1 ? "" : "s"} inside`}
+
         </p>
       </motion.div>
 
