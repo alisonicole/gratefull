@@ -90,10 +90,12 @@ export default function Home() {
         showToast("No slips in your jar yet 🌸", "info");
         return;
       }
+      // Serialize to plain JSON so createdAt and all fields survive navigate state
+      const slipJSON = typeof slip.toJSON === "function" ? slip.toJSON() : slip;
       // Pick one random entry from the three stored on this record
-      const candidates = [slip.entry1, slip.entry2, slip.entry3].filter(Boolean);
+      const candidates = [slipJSON.entry1, slipJSON.entry2, slipJSON.entry3].filter(Boolean);
       const selectedEntry = candidates[Math.floor(Math.random() * candidates.length)];
-      navigate(`/slip/${slipId}`, { state: { slip, selectedEntry } });
+      navigate(`/slip/${slipId}`, { state: { slip: slipJSON, selectedEntry } });
     } catch (err) {
       showToast(err.message || "Couldn't pull a slip. Try again.", "error");
     } finally {
