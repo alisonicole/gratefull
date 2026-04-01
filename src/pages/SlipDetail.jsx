@@ -4,6 +4,7 @@ import { useParams, useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import Parse from "@/lib/parse";
 import { useUIStore } from "@/store/useUIStore";
+import { MOOD_TAGS } from "@/lib/constants";
 
 const FADE_UP = {
   initial:    { opacity: 0, y: 16 },
@@ -138,9 +139,6 @@ export default function SlipDetail() {
           <h1 className="font-serif text-hero text-bloom-ink italic">
             A slip from your jar
           </h1>
-          {date && (
-            <p className="font-sans text-xs text-bloom-ink/38">{date}</p>
-          )}
         </motion.div>
 
         {/* ── Slip card — falls in like a paper slip ── */}
@@ -150,22 +148,35 @@ export default function SlipDetail() {
           transition={{ duration: 0.75, ease: [0.34, 1.56, 0.64, 1] }}
           className="card-slip p-6 flex flex-col gap-4"
         >
+          {/* Date stamped at the top of the slip */}
+          {date && (
+            <p className="font-sans text-xs text-bloom-ink/38 uppercase tracking-widest">
+              {date}
+            </p>
+          )}
+
+          {/* The gratitude itself */}
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="font-serif italic text-bloom-ink text-lg leading-relaxed text-center"
+            className="font-serif italic text-bloom-ink text-lg leading-relaxed"
           >
             {entryText}
           </motion.p>
 
-          {mood && (
-            <div className="mt-1 pt-3 border-t border-bloom-lavender/20">
-              <p className="font-sans text-xs text-bloom-ink/38 italic">
-                Feeling {mood} that day
-              </p>
-            </div>
-          )}
+          {/* Mood with emoji at the bottom */}
+          {mood && (() => {
+            const tag = MOOD_TAGS.find(t => t.key === mood);
+            return (
+              <div className="pt-3 border-t border-bloom-lavender/20 flex items-center gap-2">
+                {tag && <span className="text-base">{tag.emoji}</span>}
+                <p className="font-sans text-xs text-bloom-ink/45 italic">
+                  Feeling {mood} that day
+                </p>
+              </div>
+            );
+          })()}
         </motion.div>
 
         {/* ── AI insight / journal prompt ── */}
