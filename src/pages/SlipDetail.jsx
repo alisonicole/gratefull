@@ -82,14 +82,8 @@ export default function SlipDetail() {
   const mood      = slip?.moodTag1;
   const slipId    = slip?.objectId ?? id;
 
-  // DEBUG
-  if (slip) console.log("slip keys:", Object.keys(slip), "createdAt:", slip.createdAt);
-
-  // Parse cloud functions may return createdAt as { __type: "Date", iso: "..." } or a plain string
-  const rawCreatedAt = slip?.createdAt;
-  const createdAtStr = rawCreatedAt?.iso ?? rawCreatedAt ?? null;
-  const date = createdAtStr
-    ? new Date(createdAtStr).toLocaleDateString("en-US", {
+  const date = slip?.entryDate
+    ? new Date(slip.entryDate).toLocaleDateString("en-US", {
         month: "long", day: "numeric", year: "numeric",
       })
     : null;
